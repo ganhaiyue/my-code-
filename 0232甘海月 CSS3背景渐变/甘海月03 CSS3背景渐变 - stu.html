@@ -1,0 +1,277 @@
+<!-- 作业要求：
+1.自行构建HTML结构，内含30个小盒子，效果类似于2-03 CSS边框。鼠标经过小盒子时可以浮现1234等数字。（建议使用ememet语法快速构建）
+2.利用linear-gradient对各盒子进行设置，完成效果图。可以使用量图工具。
+3.部分盒子效果文字说明：
+	线性渐变主要色调：暗蓝色#f63  暗橙色#58a,,,#58a才是暗蓝色
+	第14--21个盒子开始使用多背景
+	第22-30个盒子开始是径向渐变
+ -->
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS3背景渐变</title>
+	<style>
+		body,ul,li,dl,dt,dd,h1,h2,h3,h4,h5{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background-color: #F7F7F7;
+		}
+		.wrapper{
+			width: 1000px;
+			margin: 0 auto;
+			padding: 20px;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+		header{
+			padding: 20px 0;
+			margin-bottom: 20px;
+			text-align: center;
+		}
+		header h3{
+			line-height: 1;
+			font-weight: normal;
+			font-size: 28px;
+
+		}
+		.main:after{
+			content: "";
+			clear: both;
+			display: block;
+		}
+		.main .item{
+			width: 210px;
+			height: 210px;
+			margin: 0 30px 30px 0;
+			position:relative;
+			display: flex;
+			background-color: #fff;
+			float:left;
+			box-shadow: 2px 2px 5px #ccc;
+		}
+			.main .item:after{
+			content: attr(data-brief);
+			display: block;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			text-align:center;
+			line-height:210px;
+			color:#fff;
+			background-color: rgba(177,177,177,0);
+			transition: all 0.3s ease-in;
+			z-index: -1;
+		}
+		.main .item:hover:after{
+			background-color: rgba(177,177,177,0.6);
+			z-index: 100;
+		}
+		/*.box{
+			width: 200px;
+			height: 200px;
+			border: 1px solid white;
+			margin: 30px auto;
+
+		}
+*/
+		.main .item:nth-child(1){
+			background-image: linear-gradient(#f63,#58a);
+			
+		}
+		.item:nth-child(2){
+			background-image: linear-gradient(#f63 20%,#58a 80%);
+			
+		}
+		.item:nth-child(3){
+			background-image: linear-gradient(#f63 50%,#58a 50%);
+			
+		}
+		.item:nth-child(4){
+			background-image: linear-gradient(#f63 57%,#58a 50%);
+			background-size: 100% 53px;
+			
+		}
+		.item:nth-child(5){
+			background-image: repeating-linear-gradient(#f63,#f63 30px,#58a 0px,#58a 70px);
+			
+			
+		}
+		.item:nth-child(6){
+			background-image: repeating-linear-gradient(to top,#9acd32,#9acd32 16px,#58a 0px,#58a 33px,#f63 0px,#f63 53px);
+			
+		}
+		.item:nth-child(7){
+			background-image: repeating-linear-gradient(#ff6633,#ff6633 13px,#5588aa 0px,#5588aa 27px,#9acd32 15px,#9acd32 40px,#800080 0px,#800080 53px);
+			
+			
+		}
+		.item:nth-child(8){
+			background-image: repeating-linear-gradient(to right,#ff6633,#ff6633 13px,#5588aa 0px,#5588aa 27px,#9acd32 15px,#9acd32 40px,#800080 0px,#800080 53px);
+			
+ 
+			
+		}
+		.item:nth-child(9){
+			background-image: linear-gradient(45deg,#f63 25%,#58a 30%,#58a 51%,#9acd32 46%,#9acd32 72%,#800080 14%,#800080 10%);
+			background-size: 26% 26%;
+			
+		}
+		.item:nth-child(10){
+			background-image: repeating-linear-gradient(30deg,#f63,#f63 13px,#58a 0px,#58a 30px);
+			
+			
+		}.item:nth-child(11){
+			background-image: repeating-linear-gradient(30deg,#f63 12px,#f63 20px,#58a 0px,#58a 28px);
+			
+		}
+		.item:nth-child(12){
+			background-image: repeating-linear-gradient(30deg,#f63 9px,#f63 16px,#58a 17px,#58a 43px);
+			
+			
+		}
+		.item:nth-child(13){
+			background-image: repeating-linear-gradient(50deg,#f63,#f63 13px,#58a 0px,#58a 30px);
+			
+			
+		}
+		.item:nth-child(14){
+			background-image: repeating-linear-gradient(30deg,#5588aa,#5588aa 13px,#6694b2 0px,#6694b2 30px);
+			
+		}
+		.item:nth-child(15){
+			background-image: repeating-linear-gradient(15deg,#ff6633,#ff6633 13px,#ff7547 0px,#ff7547 30px);
+			
+		}
+		.item:nth-child(16){
+			background: #f63;
+    		background-image:
+        	linear-gradient(white 1px, transparent 0),  
+        	linear-gradient(90deg, white 1px, transparent 0);
+    		background-size: 30px 30px;
+		
+		}
+		.item:nth-child(17){
+			background: #f63;
+    		background-image:
+        	linear-gradient(white 2px, transparent 0),  
+        	linear-gradient(90deg, white 2px, transparent 0);
+    		background-size: 30px 30px;
+
+			
+		}
+		.item:nth-child(18){
+			background: #f63; 
+   			background-image:
+    		linear-gradient(white 2px, transparent 0), 
+    		linear-gradient(90deg, white 2px, transparent 0), 
+    		linear-gradient(hsla(0,0%,100%,.3) 1px,transparent 0),
+    		linear-gradient(90deg, hsla(0,0%,100%,.3) 1px,transparent 0);
+   			background-size: 75px 75px, 75px 75px,15px 15px, 15px 15px;
+			
+		}
+		.item:nth-child(19){
+			background-image: repeating-linear-gradient(to left bottom, #eee 0 50%, #bbb 50% 120%);
+			background-size: 15% 30px;
+		}
+		.item:nth-child(20){
+			background-image: repeating-linear-gradient(to right,#ff6633,#FF6636 12px,#aabb44 0px,#aabb44 25px,#f0e2db 10px,#f0e2db 45px,#665556 0px,#665555 63px);
+			
+			
+		}
+		.item:nth-child(21){
+			background-image: repeating-linear-gradient(to right,#ff6633,#FF6636 8px,#aabb44 0px,#aabb44 20px,#665555 10px,#665555 31px,#f0e2db 22px,#f0e2db 46px,#665556 44px,#665555 65px);
+			background-size: 100% 50px;
+
+			
+		}
+		.item:nth-child(22){
+			background-image: radial-gradient(150px at center,black,white);
+			
+		}
+		.item:nth-child(23){
+			background-image: radial-gradient(150px at center,white,#8acae7,#f90000,black);
+			
+		}
+		.item:nth-child(24){
+			background-image: radial-gradient(160px 170px at right bottom,white,#8acae7,#f90000,black);
+			
+		}
+		.item:nth-child(25){
+			background-image: radial-gradient(150px 50px at center,white,#8acae7,#f90000,black);
+			
+		}
+		.item:nth-child(26){
+			background-image: radial-gradient(245px 145px at 20px,white,black);
+			
+		}
+		.item:nth-child(27){
+			background-image: radial-gradient(120px 75px at 105px 10px ,white,black);
+			
+		}
+		.item:nth-child(28){
+			background-image: radial-gradient(50px 165px at 200px 80px,white,#8acae7,#f90000,black);
+			
+		}
+		.item:nth-child(29){
+			background: #655;
+  			background-image: radial-gradient(tan 30%, transparent 0),
+  			radial-gradient(tan 30%, transparent 0);
+  			background-size: 30px 30px;
+}
+        .item:nth-child(30){
+			background: #655;
+  			background-image: radial-gradient(tan 30%, transparent 0),
+  			radial-gradient(tan 30%, transparent 0);
+  			background-size: 30px 30px;
+  			background-position: 0 0, 15px 15px;
+}
+
+		</style>
+		</head>
+		<body>
+		<div class="wrapper">
+		  <header>
+		   <h3>CSS3 背景渐变</h3>
+		  </header>
+		  <div class="main">
+		<div class="item" data-brief="1"></div>
+		<div class="item" data-brief="2"></div>
+		<div class="item" data-brief="3"></div>
+		<div class="item" data-brief="4"></div>
+		<div class="item" data-brief="5"></div>
+		<div class="item" data-brief="6"></div>
+		<div class="item" data-brief="7"></div>
+		<div class="item" data-brief="8"></div>
+		<div class="item" data-brief="9"></div>
+		<div class="item" data-brief="10"></div>
+		<div class="item" data-brief="11"></div>
+		<div class="item" data-brief="12"></div>
+		<div class="item" data-brief="13"></div>
+		<div class="item" data-brief="14"></div>
+		<div class="item" data-brief="15"></div>
+		<div class="item" data-brief="16"></div>
+		<div class="item" data-brief="17"></div>
+		<div class="item" data-brief="18"></div>
+		<div class="item" data-brief="19"></div>
+		<div class="item" data-brief="20"></div>
+		<div class="item" data-brief="21"></div>
+		<div class="item" data-brief="22"></div>
+		<div class="item" data-brief="23"></div>
+		<div class="item" data-brief="24"></div>
+		<div class="item" data-brief="25"></div>
+		<div class="item" data-brief="26"></div>
+		<div class="item" data-brief="27"></div>
+		<div class="item" data-brief="28"></div>
+		<div class="item" data-brief="29"></div>
+		<div class="item" data-brief="30"></div>
+		</div>
+		</div>
+	
+		</body>
+		</html>
