@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>CSS3立方体旋转</title> 
+    <style type="text/css">
+    html { 
+     background:linear-gradient(#358b98 0%, white 80%);
+     height:1000px;
+     opacity:0.8;
+ }
+     .wrapper{ 
+     margin-top: 400px;
+     perspective: 1000px;
+ }
+     .cube {
+     height:200px;
+     width: 200px;
+     position:relative;
+     margin: auto;
+     transform-style:preserve-3d;
+     -webkit-animation:rotate 8s infinit;
+      -o-animation:rotate 8s infinite;
+     animation:rotate 8s infinite 0s;
+     }
+     @keyframes rotate {
+     from{
+     transform:rotateY(0deg) rotateX(0deg);
+ }
+     to {
+     transform:rotateY(360deg) rotateX(360deg);
+
+     }
+     }
+     .cube>div{
+     height:100%;
+     width: 100%;
+     opacity:0.6;
+     position:absolute;
+     text-align:center;
+     color : #fff;
+     line-height: 200px;
+     font-size: 30px;
+     }
+     .plane-front {
+     transform:translateZ(100px);
+     background:pink;
+     } .plane-back {
+     transform:rotateY(180deg) translateZ(100px);
+     background: yellow;
+     }
+     .plane-left {
+     transform:rotateY(270deg)translateZ(100px);
+     background: blue;
+     }
+     .plane-right {
+     transform:rotateY(90deg)translateZ(100px);
+     background: orange;
+     }
+     .plane-top{
+     transform:rotateX(90deg) translateZ(100px);
+     background: purple;
+     } 
+     .plane-bottom {
+     transform:rotateX(270deg) translateZ(100px);
+     background:green ;
+     }
+     .cube: hover .plane-front {
+     transform:translateZ(200px);
+
+     }
+     .cube: hover .plane-back {
+     transform:rotateY(180deg) translateZ(200px);
+     }
+     .cube: hover .plane-left {
+     transform:rotateY(270deg) translateZ(200px);
+     }
+     .cube: hover .plane-right {
+     transform:rotateY(90deg) translateZ(200px);
+     }
+     .cube: hover plane-top {
+     transform:rotateX(90deg) translateZ(200px);
+     }
+     .cube: hover .plane-bottom {
+     transform:rotateX(270deg) translateZ(200px);
+     }
+    </style>
+    </head>
+    <body>
+    <div class="wrapper">
+        <div class="cube">
+        <div class="plane-front">前</div>
+        <div class="plane-back">后</div>
+        <div class="plane-right">右</div>
+        <div class="plane-left">左</div>
+        <div class="plane-top">上</div>
+        <div class="plane-bottom">下</div>
+        </div>
+    </div>
+    </body>
+    </html>
+
+
