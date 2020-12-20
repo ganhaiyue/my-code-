@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>纯CSS3太阳系旋转</title>
+	<style>
+	  body{
+	  	background-color: #000;
+	  }
+	  .sun{
+	  	width: 100px;
+	  	height: 100px;
+	  	border-radius: 50%;
+	  	background:orange ;
+	  	border: 1px solid #feeb06;
+	  	position: absolute;
+	  	left: 50%;
+	  	top:50%;
+	  	margin-left: -50px;
+	  	margin-top:-50px;
+	  	box-shadow: 5px 5px 10px yellow,-5px -5px 10px yellow,5px -5px 10px yellow,-5px 5px 10px yellow;
+	  }
+	  .mercury{
+	  	width: 200px;
+	  	height:200px;
+	  	border-radius: 50%;
+	  	position: absolute;
+	  	border: 1px solid #fff;
+	  	left: 50%;
+	  	top:50%;
+	  	margin-left: -100px;
+	  	margin-top:-100px;
+	  	animation: rot 8s linear infinite;
+
+
+	  }
+	  .mercury::after{
+	  	content: "";
+	  	width: 20px;
+	  	height: 20px;
+	  	border-radius: 50%;
+	  	background: #898c98;
+	  	position:absolute;
+	  	left:0%;
+	  	top:50%;
+	  	margin-left: -10px;
+	  	margin-top:-10px;
+
+	  }
+	  
+.venus{
+	  	width: 300px;
+	  	height:300px;
+	  	border-radius: 50%;
+	  	position: absolute;
+	  	border: 1px solid #fff;
+	  	left: 50%;
+	  	top:50%;
+	  	margin-left: -155px;
+	  	margin-top:-155px;
+	  	animation: rot 8s linear infinite;
+
+
+	  }
+	  .venus::after{
+	  	content: "";
+	  	width: 30px;
+	  	height: 30px;
+	  	border-radius: 50%;
+	  	background: #d2a348;
+	  	position:absolute;
+	  	left:0%;
+	  	top:50%;
+	  	margin-left: -15px;
+	  	margin-top:-20px;
+
+	  }
+	  .earth{
+	  	width: 450px;
+	  	height:450px;
+	  	border-radius: 50%;
+	  	position: absolute;
+	  	border: 1px solid #fff;
+	  	left: 50%;
+	  	top:50%;
+	  	margin-left: -230px;
+	  	margin-top:-230px;
+	  	animation: rot 8s linear infinite;
+
+
+	  }
+
+	  .earth::after{
+	  	content: "";
+	  	width: 30px;
+	  	height: 30px;
+	  	border-radius: 50%;
+	  	background: #4f577f;
+	  	position:absolute;
+	  	left:0%;
+	  	top:50%;
+	  	margin-left: -15px;
+	  	margin-top:-30px;
+
+	  }
+	  
+	  .moon{
+	  	width: 30px;
+	  	height: 30px;
+	  	border-radius: 50%;
+	  	background: white;
+	  	position:relative;
+
+	  }
+	  .mars{
+	  	width: 600px;
+	  	height:600px;
+	  	border-radius: 50%;
+	  	position: absolute;
+	  	border: 1px solid #fff;
+	  	left: 50%;
+	  	top:50%;
+	  	margin-left: -300px;
+	  	margin-top:-300px;
+	  	animation: rot 8s linear infinite;
+
+
+	  }
+	  .mars::after{
+	  	content: "";
+	  	width: 30px;
+	  	height: 30px;
+	  	border-radius: 50%;
+	  	background: #d0652a;
+	  	position:absolute;
+	  	left:0%;
+	  	top:50%;
+	  	margin-left: 0px;
+	  	margin-top:-115px;
+
+	  }
+	  @keyframes rot{
+	100%{transform:rotate(360deg);}
+}
+	</style>
+	</head>
+
+	<body>  
+	  <div class="sun"></div>
+      <div class="mercury"></div>
+      <div class="venus"></div>
+       <div class="earth">
+         <div class="moon"></div>
+	   </div>
+	   <div class="mars"></div>
+
+ 	</body>
+	</html>
